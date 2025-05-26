@@ -1,0 +1,22 @@
+{
+  "name": "rock-koncertek",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@fullcalendar/bootstrap5": "^6.1.17",
+    "@fullcalendar/core": "^6.1.17",
+    "@fullcalendar/daygrid": "^6.1.17",
+    "@fullcalendar/list": "^6.1.17",
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1"
+  }
+}

@@ -1,0 +1,179 @@
+@import url('https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html, body {
+	height: 100%;
+	min-height: 100vh;
+	margin: 0;
+	background: #111;
+	color: #f8f9fa;
+	font-family: 'Segoe UI', sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+body.layout-flex main,
+main { flex: 1; }
+
+.navbar {
+	background: #1a1a1a !important;
+	border-bottom: 2px solid #b30000;
+}
+.navbar .navbar-brand {
+	color: #b30000 !important;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1.8rem;
+}
+.navbar .nav-link {
+	color: #f8f9fa !important;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+	color: #b30000 !important;
+}
+
+.rock-header {
+	height: 400px;
+	min-height: 400px;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #212529;
+	z-index: 1;
+}
+.rock-video-bg,
+.rock-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.rock-video-bg { object-fit: cover; z-index: 0; }
+.rock-overlay { background: rgba(0, 0, 0, 0.6); z-index: 1; }
+.rock-header .container {
+	position: relative;
+	z-index: 2;
+	color: white;
+}
+
+.card {
+	background: #222;
+	color: white;
+	border: 1px solid #444;
+	transition: transform 0.2s;
+}
+.card:hover {
+	transform: scale(1.01);
+	border-color: #b30000;
+}
+
+.btn-primary {
+	background: #b30000;
+	border-color: #b30000;
+}
+.btn-primary:hover {
+	background: #800000;
+	border-color: #800000;
+}
+
+.list-group-item,
+#legdragabbWidget .list-group-item {
+	background: #222;
+	color: #fff;
+	border-color: #333;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-family: 'Segoe UI', sans-serif;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.list-group-item:hover { background: #333; }
+
+h1, .card-title, .fc-toolbar-title, #legdragabbWidget .card-header {
+	font-family: 'Bebas Neue', cursive;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.fc-toolbar-title,
+#legdragabbWidget .card-header {
+	font-size: 1.3rem;
+	color: #b30000;
+}
+#legdragabbWidget .card-header {
+	background: #1a1a1a;
+	border-bottom: 1px solid #b30000;
+}
+
+.toast-body { font-weight: bold; }
+.toast { z-index: 1000; }
+
+#koncertNaptar.naptar-fix {
+	min-height: 500px;
+	width: 100%;
+	color: white;
+}
+.fc {
+	font-size: 0.9rem;
+	background: #1a1a1a;
+	color: white;
+	border-radius: 8px;
+	padding: 10px;
+}
+.fc-daygrid-event {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 500;
+	font-size: 0.85rem;
+}
+.fc-button {
+	font-size: 0.85rem;
+	background: #b30000 !important;
+	border: none !important;
+}
+.fc-button:hover { background: #800000 !important; }
+.fc-list-event {
+	background: #222;
+	color: #fff;
+}
+.fc-list-event:hover { background: #333; }
+.fc-list-day {
+	background: #000;
+	color: #ff4d4d;
+	font-weight: bold;
+}
+.fc-list-day-cushion {
+	background: #111;
+	color: #f8f9fa;
+}
+.fc-theme-bootstrap5 .fc-list-event:hover td {
+	background: #444 !important;
+	color: #fff !important;
+}
+
+.keresomezo {
+	background: #222 !important;
+	color: #fff !important;
+	border: 1px solid #555 !important;
+}
+.keresomezo::placeholder { color: #aaa !important; }
+
+.footer-icon {
+	color: white;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+.footer-icon.facebook:hover { color: #1877f2; }
+.footer-icon.instagram:hover { color: #f56040; }
+.footer-icon.youtube:hover { color: #ff0000; }
+
+.payment-logos img {
+	height: 32px;
+	background: #fff;
+	padding: 6px 12px;
+	border-radius: 6px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	transition: transform 0.2s ease;
+}
+.payment-logos img:hover { transform: scale(1.05); }

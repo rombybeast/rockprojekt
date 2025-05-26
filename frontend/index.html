@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>RockJegy.hu – Rock Koncert Webshop 🎸</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+	<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+		<a class="navbar-brand fw-bold" href="/">🎸 RockJegy.hu</a>
+		<div class="navbar-nav ms-auto">
+			<a class="nav-link active" href="/">Főoldal</a>
+			<a class="nav-link" href="/kosar.html">Kosár 🛒</a>
+		</div>
+	</div>
+</nav>
+
+<header class="rock-header position-relative text-white text-center">
+	<video autoplay muted loop class="rock-video-bg">
+		<source src="https://cdn.pixabay.com/video/2015/11/07/1275-145116912_medium.mp4" type="video/mp4" />
+	</video>
+	<div class="rock-overlay"></div>
+	<div class="container position-relative z-1 py-5">
+		<h1 class="display-4 fw-bold">Üdvözlünk a RockJegy.hu-n!</h1>
+		<p class="lead">A legjobb rock koncertek jegyei egy helyen.</p>
+	</div>
+</header>
+
+<div class="container py-5">
+	<div class="d-flex justify-content-between align-items-center mb-3">
+		<h2 class="mb-0">🎤 Közelgő koncertek</h2>
+		<input type="text" id="kereso" class="form-control keresomezo" placeholder="🔍 Előadó keresése..." style="max-width: 250px;">
+	</div>
+	<div class="row">
+		<div class="col-lg-7">
+			<div id="koncertLista" class="row g-4"></div>
+		</div>
+		<div class="col-lg-5">
+			<div class="card shadow-sm">
+				<div class="card-body">
+					<h3 class="card-title mb-3">📅 Naptár</h3>
+					<div id="koncertNaptar" class="naptar-fix mb-4"></div>
+				</div>
+			</div>
+			<div id="legdragabbWidget" class="mt-4"></div>
+		</div>
+	</div>
+</div>
+
+<footer class="bg-dark text-white mt-5 py-4 border-top border-danger">
+	<div class="container text-center">
+		<p class="mb-2">© 2025 RockJegy.hu – Minden jog fenntartva.</p>
+		<div class="d-flex justify-content-center gap-3">
+			<a href="#" class="footer-icon facebook"><i class="fab fa-facebook fa-lg"></i></a>
+			<a href="#" class="footer-icon instagram"><i class="fab fa-instagram fa-lg"></i></a>
+			<a href="#" class="footer-icon youtube"><i class="fab fa-youtube fa-lg"></i></a>
+		</div>
+	</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

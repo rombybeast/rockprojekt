@@ -89,3 +89,10 @@ async function init() {
 
 }
 
+window.hozzaadKosarba = function(k) {
+	let kosar = JSON.parse(localStorage.getItem('kosar') || '[]');
+	kosar.push(k);
+	localStorage.setItem('kosar', JSON.stringify(kosar));
+	mutatToast(`${k.eloado} koncert hozzáadva a kosárhoz!`);
+};
+

@@ -47,4 +47,13 @@ function showModal(adat, index) {
 		<p><strong>Ár:</strong> ${adat.ar.toLocaleString()} Ft</p>
 		<button class="btn btn-danger mt-3" id="modalTorlesGomb">Törlés a kosárból</button>
 	`;
+	setTimeout(() => {
+		document.getElementById('modalTorlesGomb')?.addEventListener('click', () => {
+			torlesKosarbol(index);
+			bootstrap.Modal.getInstance(document.getElementById('koncertModal')).hide();
+		});
+	}, 10);
+
+	new bootstrap.Modal(document.getElementById('koncertModal')).show();
+}
 }

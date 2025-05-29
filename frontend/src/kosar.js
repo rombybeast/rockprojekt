@@ -38,3 +38,13 @@ function torlesKosarbol(index) {
 		betoltKosar();
 	}
 }
+function showModal(adat, index) {
+	const modalTartalom = document.getElementById('modalTartalom');
+	modalTartalom.innerHTML = `
+		<p><strong>Előadó:</strong> ${adat.eloado}</p>
+		<p><strong>Dátum:</strong> ${new Date(adat.datum).toLocaleString()}</p>
+		<p><strong>Helyszín:</strong> ${adat.helyszin}</p>
+		<p><strong>Ár:</strong> ${adat.ar.toLocaleString()} Ft</p>
+		<button class="btn btn-danger mt-3" id="modalTorlesGomb">Törlés a kosárból</button>
+	`;
+}

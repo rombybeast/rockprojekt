@@ -61,3 +61,45 @@ h1, .card-title, .fc-toolbar-title, #legdragabbWidget .card-header {
 	z-index: 2;
 	color: white;
 }
+
+.card {
+	background: #222;
+	color: white;
+	border: 1px solid #444;
+	transition: transform 0.2s;
+}
+.card:hover {
+	transform: scale(1.01);
+	border-color: #b30000;
+}
+
+.btn-primary {
+	background: #b30000;
+	border-color: #b30000;
+}
+.btn-primary:hover {
+	background: #800000;
+	border-color: #800000;
+}
+
+.list-group-item,
+#legdragabbWidget .list-group-item {
+	background: #222;
+	color: #fff;
+	border-color: #333;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-family: 'Segoe UI', sans-serif;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.list-group-item:hover { background: #333; }
+
+.keresomezo {
+	background: #222 !important;
+	color: #fff !important;
+	border: 1px solid #555 !important;
+}
+.keresomezo::placeholder { color: #aaa !important; }
+

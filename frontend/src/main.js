@@ -139,3 +139,4 @@ function mutatToast(uzenet) {
   toastElem.addEventListener('hidden.bs.toast', () => toastElem.remove());
 }
 
+window.onload = init;

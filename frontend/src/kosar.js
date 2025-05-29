@@ -30,7 +30,6 @@ function betoltKosar() {
 
 	osszegElem.textContent = osszeg.toLocaleString();
 }
-
 function torlesKosarbol(index) {
 	if (confirm("Biztosan törölni szeretnéd ezt a koncertet a kosárból?")) {
 		const kosar = JSON.parse(localStorage.getItem('kosar') || '[]');
@@ -39,7 +38,6 @@ function torlesKosarbol(index) {
 		betoltKosar();
 	}
 }
-
 function showModal(adat, index) {
 	const modalTartalom = document.getElementById('modalTartalom');
 	modalTartalom.innerHTML = `
@@ -49,7 +47,6 @@ function showModal(adat, index) {
 		<p><strong>Ár:</strong> ${adat.ar.toLocaleString()} Ft</p>
 		<button class="btn btn-danger mt-3" id="modalTorlesGomb">Törlés a kosárból</button>
 	`;
-
 	setTimeout(() => {
 		document.getElementById('modalTorlesGomb')?.addEventListener('click', () => {
 			torlesKosarbol(index);
@@ -59,7 +56,6 @@ function showModal(adat, index) {
 
 	new bootstrap.Modal(document.getElementById('koncertModal')).show();
 }
-
 window.addEventListener('DOMContentLoaded', () => {
 	betoltKosar();
 
@@ -84,11 +80,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		modal.show();
 	});
-
-	modalElem.addEventListener('hidden.bs.modal', () => {
+		modalElem.addEventListener('hidden.bs.modal', () => {
 		if (fizetesSikeres) {
 			localStorage.removeItem('kosar');
 			betoltKosar();
 		}
 	});
+
+	
 });
+

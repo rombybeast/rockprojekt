@@ -60,5 +60,19 @@ async function init() {
 			color: szinek[i % szinek.length],
 			extendedProps: { helyszin: k.helyszin, ar: k.ar }
 		}))
+		eventClick(info) {
+			mutatModal({
+				eloado: info.event.title,
+				datum: info.event.start,
+				helyszin: info.event.extendedProps.helyszin,
+				ar: info.event.extendedProps.ar
+			});
+		},
+		eventDidMount(info) {
+			info.el.setAttribute('title', `${info.event.title} – ${info.event.extendedProps.helyszin}`);
+		}
+	});
+	calendar.render();
+
 }
 

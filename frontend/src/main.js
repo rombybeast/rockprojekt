@@ -74,5 +74,18 @@ async function init() {
 	});
 	calendar.render();
 
+	const top5 = koncertek.sort((a, b) => b.ar - a.ar).slice(0, 5);
+	document.getElementById('legdragabbWidget').innerHTML = `
+		<div class="card bg-dark text-white shadow-sm mt-4">
+			<div class="card-header border-bottom border-danger">💸 Legdrágább koncertek</div>
+			<ul class="list-group list-group-flush">
+				${top5.map(k => `
+					<li class="list-group-item" style="cursor:pointer" onclick='mutatModal(${JSON.stringify(k)})'>
+						<span>${k.eloado}</span>
+						<span class="fw-bold">${k.ar.toLocaleString()} Ft</span>
+					</li>`).join('')}
+			</ul>
+		</div>`;
+
 }
 

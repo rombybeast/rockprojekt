@@ -12,6 +12,29 @@ async function init() {
 	const lista = document.getElementById('koncertLista');
 	const szinek = ['#b30000', '#ff0000', '#800000', '#e60026', '#ff4d4d', '#cc0000', '#990000', '#ff3300', '#d11a2a', '#a80000'];
 
+	function createCard(k) {
+		return `
+			<div class="col-md-6">
+				<div class="card shadow-sm h-100">
+					<div class="card-body">
+						<h5 class="card-title">${k.eloado}</h5>
+						<p class="card-text">${new Date(k.datum).toLocaleString()}<br>${k.helyszin}</p>
+						<p class="fw-bold">${k.ar.toLocaleString()} Ft</p>
+						<button class="btn btn-primary" onclick='hozzaadKosarba(${JSON.stringify(k)})'>Kosárba</button>
+					</div>
+				</div>
+			</div>`;
+	}
+
+	function frissitLista(szuro = '') {
+		const szurt = koncertek.filter(k =>
+			k.eloado.toLowerCase().includes(szuro.toLowerCase())
+		);
+		lista.innerHTML = szurt.map(createCard).join('');
+	}
+
+	frissitLista();
+	document.getElementById('kereso').addEventListener('input', e => frissitLista(e.target.value));
 
 
 }

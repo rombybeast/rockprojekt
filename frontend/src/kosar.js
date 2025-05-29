@@ -80,6 +80,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		modal.show();
 	});
+		modalElem.addEventListener('hidden.bs.modal', () => {
+		if (fizetesSikeres) {
+			localStorage.removeItem('kosar');
+			betoltKosar();
+		}
+	});
 
 	
 });

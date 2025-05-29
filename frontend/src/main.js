@@ -95,4 +95,10 @@ window.hozzaadKosarba = function(k) {
 	localStorage.setItem('kosar', JSON.stringify(kosar));
 	mutatToast(`${k.eloado} koncert hozzáadva a kosárhoz!`);
 };
+window.hozzaadKosarbaEsZar = function(k) {
+	hozzaadKosarba(k);
+	const modal = bootstrap.Modal.getInstance(document.getElementById('koncertModal'));
+	if (modal) modal.hide();
+};
+
 

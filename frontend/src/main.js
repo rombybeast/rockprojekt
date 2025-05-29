@@ -100,5 +100,29 @@ window.hozzaadKosarbaEsZar = function(k) {
 	const modal = bootstrap.Modal.getInstance(document.getElementById('koncertModal'));
 	if (modal) modal.hide();
 };
+window.mutatModal = function(k) {
+	const modalWrap = document.createElement('div');
+	modalWrap.innerHTML = `
+		<div class="modal fade" id="koncertModal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content bg-dark text-white">
+					<div class="modal-header border-bottom border-secondary">
+						<h5 class="modal-title">${k.eloado}</h5>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+					</div>
+					<div class="modal-body">
+						<p><strong>Dátum:</strong> ${new Date(k.datum).toLocaleString()}</p>
+						<p><strong>Helyszín:</strong> ${k.helyszin}</p>
+						<p><strong>Ár:</strong> ${k.ar.toLocaleString()} Ft</p>
+						<button class="btn btn-primary mt-3" onclick='hozzaadKosarbaEsZar(${JSON.stringify(k)})'>Kosárba</button>
+					</div>
+				</div>
+			</div>
+		</div>`;
+	document.body.appendChild(modalWrap);
+	const modal = new bootstrap.Modal(document.getElementById('koncertModal'));
+	modal.show();
+	document.getElementById('koncertModal').addEventListener('hidden.bs.modal', () => modalWrap.remove());
+};
 
 

@@ -19,9 +19,14 @@ function betoltKosar() {
 		li.innerHTML = `
 			<span>${k.eloado} – ${k.ar.toLocaleString()} Ft</span>
 			<button class="btn btn-sm btn-danger">Törlés</button>
-			`;
-		
+		`;
+		li.querySelector('button').onclick = e => {
+			e.stopPropagation();
+			torlesKosarbol(i);
+		};
+		li.onclick = () => showModal(k, i);
+		lista.appendChild(li);
 	});
 
-	
+	osszegElem.textContent = osszeg.toLocaleString();
 }

@@ -103,3 +103,75 @@ h1, .card-title, .fc-toolbar-title, #legdragabbWidget .card-header {
 }
 .keresomezo::placeholder { color: #aaa !important; }
 
+.fc {
+	font-size: 0.9rem;
+	background: #1a1a1a;
+	color: white;
+	border-radius: 8px;
+	padding: 10px;
+}
+#koncertNaptar.naptar-fix {
+	min-height: 500px;
+	width: 100%;
+	color: white;
+}
+.fc-daygrid-event {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 500;
+	font-size: 0.85rem;
+}
+.fc-button {
+	font-size: 0.85rem;
+	background: #b30000 !important;
+	border: none !important;
+}
+.fc-button:hover { background: #800000 !important; }
+.fc-list-event {
+	background: #222;
+	color: #fff;
+}
+.fc-list-event:hover { background: #333; }
+.fc-list-day {
+	background: #000;
+	color: #ff4d4d;
+	font-weight: bold;
+}
+.fc-list-day-cushion {
+	background: #111;
+	color: #f8f9fa;
+}
+.fc-theme-bootstrap5 .fc-list-event:hover td {
+	background: #444 !important;
+	color: #fff !important;
+}
+
+.toast-body { font-weight: bold; }
+.toast { z-index: 1000; }
+
+#legdragabbWidget .card-header {
+	background: #1a1a1a;
+	border-bottom: 1px solid #b30000;
+	font-size: 1.3rem;
+	color: #b30000;
+}
+
+.footer-icon {
+	color: white;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+.footer-icon.facebook:hover { color: #1877f2; }
+.footer-icon.instagram:hover { color: #f56040; }
+.footer-icon.youtube:hover { color: #ff0000; }
+
+.payment-logos img {
+	height: 32px;
+	background: #fff;
+	padding: 6px 12px;
+	border-radius: 6px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	transition: transform 0.2s ease;
+}
+.payment-logos img:hover { transform: scale(1.05); }

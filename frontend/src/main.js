@@ -125,4 +125,17 @@ window.mutatModal = function(k) {
 	document.getElementById('koncertModal').addEventListener('hidden.bs.modal', () => modalWrap.remove());
 };
 
+function mutatToast(uzenet) {
+	const toastElem = document.createElement('div');
+	toastElem.className = 'toast align-items-center text-bg-success border-0 position-fixed bottom-0 end-0 m-4';
+	toastElem.setAttribute('role', 'alert');
+	toastElem.innerHTML = `
+		<div class="d-flex">
+			<div class="toast-body">${uzenet}</div>
+			<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+		</div>`;
+	document.body.appendChild(toastElem);
+	new bootstrap.Toast(toastElem, { delay: 2000 }).show();
+  toastElem.addEventListener('hidden.bs.toast', () => toastElem.remove());
+}
 

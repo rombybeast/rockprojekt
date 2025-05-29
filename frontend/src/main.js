@@ -36,5 +36,29 @@ async function init() {
 	frissitLista();
 	document.getElementById('kereso').addEventListener('input', e => frissitLista(e.target.value));
 
-
+	const calendar = new Calendar(document.getElementById('koncertNaptar'), {
+		plugins: [dayGridPlugin, listPlugin, bootstrap5Plugin],
+		themeSystem: 'bootstrap5',
+		locale: huLocale,
+		initialView: 'dayGridMonth',
+		contentHeight: 'auto',
+		displayEventTime: false,
+		dayMaxEventRows: true,
+		eventDisplay: 'block',
+		headerToolbar: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'dayGridMonth,listWeek'
+		},
+		buttonIcons: {
+			prev: 'arrow-left',
+			next: 'arrow-right'
+		},
+		events: koncertek.map((k, i) => ({
+			title: k.eloado,
+			start: new Date(k.datum),
+			color: szinek[i % szinek.length],
+			extendedProps: { helyszin: k.helyszin, ar: k.ar }
+		}))
 }
+

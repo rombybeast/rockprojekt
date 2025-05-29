@@ -56,4 +56,31 @@ function showModal(adat, index) {
 
 	new bootstrap.Modal(document.getElementById('koncertModal')).show();
 }
-}
+window.addEventListener('DOMContentLoaded', () => {
+	betoltKosar();
+
+	const fizetesGomb = document.querySelector('button.btn-success');
+	if (!fizetesGomb) return;
+
+	const modalElem = document.getElementById('fizetesModal');
+	const modal = new bootstrap.Modal(modalElem);
+	const modalBody = modalElem.querySelector('.modal-body');
+	const modalTitle = modalElem.querySelector('.modal-title');
+
+	let fizetesSikeres = false;
+
+	fizetesGomb.addEventListener('click', () => {
+		const kosar = JSON.parse(localStorage.getItem('kosar') || '[]');
+		fizetesSikeres = kosar.length > 0;
+
+		modalTitle.textContent = fizetesSikeres ? 'Fizetés sikeres ✅' : 'Üres a kosarad ❌';
+		modalBody.innerHTML = fizetesSikeres
+			? `<p>Köszönjük a rendelésed!</p><p>A koncertjegyeket elküldtük az e-mail címedre. Onnan tudod letölteni vagy kinyomtatni őket.</p>`
+			: `<p><strong>Jelenleg nincs egyetlen koncert sem a kosaradban.</strong></p><p>Kérjük, válassz legalább egy eseményt a vásárlás folytatásához.</p>`;
+
+		modal.show();
+	});
+
+	
+});
+

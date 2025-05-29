@@ -1,1 +1,22 @@
+@import url('https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+html, body {
+	height: 100%;
+	min-height: 100vh;
+	margin: 0;
+	background: #111;
+	color: #f8f9fa;
+	font-family: 'Segoe UI', sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+body.layout-flex main,
+main { flex: 1; }
+
+
+h1, .card-title, .fc-toolbar-title, #legdragabbWidget .card-header {
+	font-family: 'Bebas Neue', cursive;
+	letter-spacing: 1px;
+	font-weight: bold;
+}

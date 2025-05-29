@@ -30,3 +30,11 @@ function betoltKosar() {
 
 	osszegElem.textContent = osszeg.toLocaleString();
 }
+function torlesKosarbol(index) {
+	if (confirm("Biztosan törölni szeretnéd ezt a koncertet a kosárból?")) {
+		const kosar = JSON.parse(localStorage.getItem('kosar') || '[]');
+		kosar.splice(index, 1);
+		localStorage.setItem('kosar', JSON.stringify(kosar));
+		betoltKosar();
+	}
+}
